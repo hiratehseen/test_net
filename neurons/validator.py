@@ -52,9 +52,9 @@ async def run_fastapi_with_ngrok(app):
 
 async def main():
     services = [
-        # MusicGenerationService(),
-        # TextToSpeechService(),
-        # VoiceCloningService(),
+        MusicGenerationService(),
+        TextToSpeechService(),
+        VoiceCloningService(),
     ]
 
     # Initialize an empty list to hold our tasks
@@ -83,6 +83,7 @@ async def main():
         await asyncio.gather(fastapi_task, *tasks)
     else:
         # If the 'app' folder does not exist, continue running other tasks normally
+        print("++++++Ok++++++++++")
         await asyncio.gather(*tasks)
 
 if __name__ == "__main__":
