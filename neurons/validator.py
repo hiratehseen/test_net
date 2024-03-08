@@ -83,7 +83,6 @@ async def main():
         await asyncio.gather(fastapi_task, *tasks)
     else:
         # If the 'app' folder does not exist, continue running other tasks normally
-        print("++++++Ok++++++++++")
         await asyncio.gather(*tasks)
 
 if __name__ == "__main__":
